@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <app-jeu *ngFor="let tmp of jeux" 
+  [jeuName]="tmp.title" 
+  [jeuAffiche]="tmp.affiche" 
+  [jeuOnAir]="tmp.onAir" 
+  [synopsis]="tmp.synopsis"
+  [date]="tmp.date"  
+  [id]="tmp._id">
+</app-jeu>
+</ul>

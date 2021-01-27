@@ -1,0 +1,50 @@
+<div class="row" *ngIf="jeu">
+    <div class="col-6">
+      <div class="form-group">
+        <label>Titre :</label>
+        <br>
+        <input type="text" class="form-control" [(ngModel)] = "jeu.title">
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label>Jacket :</label>
+        <br>
+        <input type="text" class="form-control" [(ngModel)] = "jeu.affiche">
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="jeu">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="support">Support :</label>
+        <br>
+        <select id="support" [(ngModel)] = "jeu.onAir">
+          <option value="Switch">Switch</option>
+          <option value="Xbox">Xbox</option>
+          <option value="PS5">Ps5</option>
+          <option value="PC">PC</option>
+      </select>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label>Date de sortie :</label>
+        <br>
+        <input type="text" class="form-control" [(ngModel)] = "jeu.date">
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="jeu">
+    <div class="col-12">
+      <div class="form-group">
+        <label>Description :</label>
+        <br>
+        <textarea name="" id="" cols="30" rows="10" class="form-control" [(ngModel)] = "jeu.synopsis"></textarea>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center" *ngIf="jeu">
+    <button class="btn btn-outline-success" (click)="onModif()">Envoyer</button>
+  </div>

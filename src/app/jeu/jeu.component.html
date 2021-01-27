@@ -1,0 +1,33 @@
+<li [ngClass]="{ 'list-group-item': true,
+                 'list-group-item-info': jeuOnAir == 'PS5',
+                 'list-group-item-success' : jeuOnAir == 'Xbox',
+                 'list-group-item-secondary' : jeuOnAir == 'PC',
+                 'list-group-item-danger' : jeuOnAir == 'Switch'}">
+
+  <div class="row">
+
+    <div class="col-2">
+      <img [src]="jeuAffiche" alt="" class="affiche">
+    </div>
+
+    <div class="col-8">
+      <div class="onAir" *ngIf="jeuOnAir == 'PS5'"><img src="./assets/Ps5.png" alt=""></div>
+      <div class="onAir" *ngIf="jeuOnAir == 'Xbox'"><img src="./assets/Xbox.png" alt=""></div>
+      <div class="onAir" *ngIf="jeuOnAir == 'PC'"><img src="./assets/PC.png" alt=""></div>
+      <div class="onAir" *ngIf="jeuOnAir == 'Switch'"><img src="./assets/Switch.png" alt=""></div>
+      <h3 [ngStyle]="{color: changeColor()}">Jeu : {{ jeuName }} - {{ date }}</h3>
+  </div>
+
+  <div class="col-2">
+    <a [routerLink]="['/modif', id]" class="btn btn-outline-warning">Modifier</a> 
+    &nbsp;
+    <button class="btn btn-outline-danger" (click)="removeJeu(id)">Supprimer</button>
+  </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
+      {{ synopsis }}
+    </div>
+  </div>
+</li>
